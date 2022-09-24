@@ -15,7 +15,7 @@ function! wintabs#renderers#buffer(bufnr, config)
   let is_active = a:config.is_active && a:config.is_active_window
   return {
         \'label': wintabs#renderers#buf_label(a:bufnr, a:config),
-        \'highlight': is_active ? g:wintabs_ui_active_higroup : '',
+        \'highlight': is_active ? g:wintabs_ui_active_higroup : 'StatusLineNC',
         \}
 endfunction
 
