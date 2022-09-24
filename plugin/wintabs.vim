@@ -64,7 +64,7 @@ function! s:set(var, value)
 endfunction
 
 " major
-call s:set('g:wintabs_display', 'tabline')
+call s:set('g:wintabs_display', 'statusline')
 call s:set('g:wintabs_autoclose', 1)
 call s:set('g:wintabs_autoclose_vim', 0)
 call s:set('g:wintabs_autoclose_vimtab', 0)
@@ -86,9 +86,9 @@ call s:set('g:wintabs_renderers', wintabs#renderers#defaults())
 call s:set('g:wintabs_ui_modified', ' +')
 call s:set('g:wintabs_ui_readonly', ' -')
 call s:set('g:wintabs_ui_sep_leftmost', ' ')
-call s:set('g:wintabs_ui_sep_inbetween', '|')
+call s:set('g:wintabs_ui_sep_inbetween', ' ')
 call s:set('g:wintabs_ui_sep_rightmost', '|')
-call s:set('g:wintabs_ui_active_left', ' ')
+call s:set('g:wintabs_ui_active_left', '●')
 call s:set('g:wintabs_ui_active_right', ' ')
 call s:set('g:wintabs_ui_buffer_name_format', ' %t ')
 call s:set('g:wintabs_ui_show_vimtab_name', 0)
@@ -107,7 +107,7 @@ if g:wintabs_display == 'tabline'
 endif
 
 if g:wintabs_display == 'statusline'
-  call s:set('g:wintabs_ui_active_higroup', 'Normal')
+  call s:set('g:wintabs_ui_active_higroup', 'StatusLine')
 endif
 
 " private
