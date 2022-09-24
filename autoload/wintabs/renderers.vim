@@ -21,7 +21,8 @@ endfunction
 
 function! wintabs#renderers#buffer_sep(config)
   let label = g:wintabs_ui_sep_inbetween
-  let is_active = a:config.is_active && a:config.is_active_window
+  let is_active = a:config.is_active 
+  let is_active_window = a:config.is_active_window
   if a:config.is_leftmost
     let label = g:wintabs_ui_sep_leftmost
   endif
@@ -36,7 +37,7 @@ function! wintabs#renderers#buffer_sep(config)
   endif
   return {
         \'label': label,
-        \'highlight': is_active ? g:wintabs_ui_active_higroup : '',
+        \'highlight': is_active && is_active_window ? g:wintabs_ui_active_higroup : '',
         \}
 endfunction
 
