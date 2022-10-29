@@ -15,7 +15,8 @@ endfunction
 " set statusline window by window
 function! wintabs#ui#set_statusline()
   for window in range(1, winnr('$'))
-    call setwinvar(window, '&statusline', '%!wintabs#ui#get_statusline('.window.')')
+    " call setwinvar(window, '&statusline', '%!wintabs#ui#get_statusline('.window.')')
+    call setwinvar(window, '&winbar', '%!wintabs#ui#get_statusline('.window.')')
   endfor
 endfunction
 
